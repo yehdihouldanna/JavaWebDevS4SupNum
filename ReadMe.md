@@ -28,3 +28,4 @@ Pour le context de ce cours nous allons travailler les outils suivantes :
 * Taper sur entrer après VS Code va vous indiquer une boite de dilague indicant que votre projet est crée dans un nouvea dossier et vous offre l'option d'y ouvrir dans une nouvelle fenètre, clicker sur ouvrir.
 
 * Executer votre projet en clicant sur le bouton run (parmi les section dans la bare de navigation à gauche)
+
