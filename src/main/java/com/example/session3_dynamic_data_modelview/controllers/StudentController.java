@@ -1,13 +1,25 @@
-package com.example.session3_dynamic_data_modelview;
+package com.example.session3_dynamic_data_modelview.controllers;
 
-import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.ModelAttribute;
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.servlet.ModelAndView;
+import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.example.session3_dynamic_data_modelview.models.Student;
+import com.example.session3_dynamic_data_modelview.services.StudentService;
 
 
-@Controller
-public class HomeController {
+
+
+// @Controller
+@RestController
+public class StudentController {
+
+    // @Autowired
+    // private StudentRepo repo;
     
     @RequestMapping("/")
     public String index() {
@@ -46,15 +58,24 @@ public class HomeController {
     // }
 
 
-    @RequestMapping("/add")
-    public ModelAndView add(@ModelAttribute Student etudiant ,ModelAndView mv)  {
+    // @RequestMapping("/add")
+    // public ModelAndView add(@ModelAttribute Student etudiant ,ModelAndView mv)  {
 
-        mv.addObject("etudiant",etudiant);
-        mv.setViewName("result");
+    //     mv.addObject("etudiant",etudiant);
+    //     mv.setViewName("result");
 
-        return mv;
+    //     return mv;
+    // }
+    
+    @Autowired
+    private StudentService service;
+
+    @GetMapping("/students")
+    @ResponseBody
+    public List<Student> getStudents() {
+        return service.getStudents();
     }
-
+    
 
 
 }

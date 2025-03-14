@@ -1,5 +1,8 @@
-package com.example.session3_dynamic_data_modelview;
+package com.example.session3_dynamic_data_modelview.models;
 
+import org.springframework.stereotype.Component;
+
+@Component
 public class Student {
     
     private String nom;
