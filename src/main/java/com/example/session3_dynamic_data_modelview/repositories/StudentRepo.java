@@ -12,7 +12,6 @@ public class StudentRepo {
 
     public List<Student> students = new ArrayList<>();
 
-
     public StudentRepo() {
         this.students.add(new Student("Mohamed", "S4", 250001));
         this.students.add(new Student("Ahmed", "S4", 250002));
@@ -25,9 +24,20 @@ public class StudentRepo {
         }
     }
 
-
     public List<Student> getStudents() {
-        return this.students;
+        return students;
     }
+
+	public Student addStudent(Student student) {
+		this.students.add(student);
+        return student;
+	}
+
+    
+
+
+    // public List<Student> getStudents() {
+    //     return this.students;
+    // }
 
 }

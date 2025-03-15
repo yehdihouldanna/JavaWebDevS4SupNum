@@ -10,11 +10,16 @@ import com.example.session3_dynamic_data_modelview.repositories.StudentRepo;
 
 @Service
 public class StudentService {
-    
+
     @Autowired
     private StudentRepo repo;
 
     public List<Student> getStudents() {
         return repo.getStudents();
-      }
+    }
+
+	public Student addStudent(Student student) {
+		return repo.addStudent(student);
+	}
+    
 }
