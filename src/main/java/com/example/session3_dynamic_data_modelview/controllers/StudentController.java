@@ -17,6 +17,7 @@ import com.example.session3_dynamic_data_modelview.services.StudentService;
 
 
 
+
 // @Controller
 @RestController
 public class StudentController {
@@ -29,11 +30,26 @@ public class StudentController {
         return service.getStudents();
     }
 
+    
     @PostMapping("/addStudent")
     public Student addStudent(@RequestBody Student student) {
+        
         return service.addStudent(student);
-        // return student ;
     }
+
+
+    
+
+
+
+
+
+
+    // @PostMapping("/addStudent")
+    // public Student addStudent(@RequestBody Student student) {
+    //     return service.addStudent(student);
+    //     // return student ;
+    // }
     
 
 }

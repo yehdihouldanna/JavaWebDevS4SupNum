@@ -28,16 +28,10 @@ public class StudentRepo {
         return students;
     }
 
-	public Student addStudent(Student student) {
-		this.students.add(student);
+    public Student addStudent(Student student) {
+        students.add(student);
         return student;
-	}
+    }
 
-    
-
-
-    // public List<Student> getStudents() {
-    //     return this.students;
-    // }
 
 }
