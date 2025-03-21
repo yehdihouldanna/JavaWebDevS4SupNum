@@ -15,6 +15,7 @@ public class StudentService {
     @Autowired
     private StudentRepo repo;
 
+    
     @Autowired
     private StudentRepository repository;
 
@@ -25,7 +26,6 @@ public class StudentService {
     }
 
     public Student addStudent(Student student) {
-
         //return repo.addStudent(student);
         return repository.save(student);
     }
