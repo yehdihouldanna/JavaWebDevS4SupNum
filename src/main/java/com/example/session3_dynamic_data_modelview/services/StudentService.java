@@ -30,6 +30,19 @@ public class StudentService {
         return repository.save(student);
     }
 
+    public Student getStudent(int matricule) {
+        return repository.findByMatricule(matricule);
+        
+    }
+
+
+
+    
+
+        
+
+        
+
 
     
 }

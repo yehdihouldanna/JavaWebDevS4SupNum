@@ -4,12 +4,15 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.example.session3_dynamic_data_modelview.models.Student;
 import com.example.session3_dynamic_data_modelview.services.StudentService;
+
+
 
 
 
@@ -36,6 +39,14 @@ public class StudentController {
         
         return service.addStudent(student);
     }
+
+    @GetMapping("/student/{matricule}")
+    public Student getStudent(@PathVariable int matricule) {
+        return service.getStudent(matricule);
+    }
+    
+
+
 
 
     
