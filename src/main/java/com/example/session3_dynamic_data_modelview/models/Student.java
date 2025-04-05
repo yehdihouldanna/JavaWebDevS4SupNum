@@ -10,46 +10,61 @@ import jakarta.persistence.Id;
 @Component
 @Entity
 public class Student {
-    private String nom;
-    private String classe;
 
     @Id()
     @GeneratedValue(strategy = GenerationType.SEQUENCE) 
     private int matricule;
-    
+
+    private String nom;
+    private String classe;
+
+    private String dob; // Date Of Birth - (date de naissance) / JJ/MM/AAAA
+
     public Student(){
         
     }
-
-    public Student(String nom, String classe, int matricule) {
+    public Student(String nom, String classe, int matricule, String dob) {
         this.nom = nom;
         this.classe = classe;
         this.matricule = matricule;
+        this.dob = dob;
     }
-    // public Student(Student student) {
-    //     this.nom = student.getNom();
-    //     this.classe = student.getClasse();
-    //     this.matricule = student.getMatricule();
-    // }
 
-    @Override
-    public String toString() {
-        return "Student [nom=" + nom + ", classe=" + classe + ", matricule=" + matricule + "]";
-    }
-    public String getNom() {
-        return nom;
-    }
-    public String getClasse() {
-        return classe;
-    }
     public int getMatricule() {
         return matricule;
     }
 
-    
+    public void setMatricule(int matricule) {
+        this.matricule = matricule;
+    }
 
-    
+    public String getNom() {
+        return nom;
+    }
 
+    public void setNom(String nom) {
+        this.nom = nom;
+    }
 
-    
+    public String getClasse() {
+        return classe;
+    }
+
+    public void setClasse(String classe) {
+        this.classe = classe;
+    }
+
+    public String getDob() {
+        return dob;
+    }
+
+    public void setDob(String dob) {
+        this.dob = dob;
+    }
+
+    @Override
+    public String toString() {
+        return "Student [matricule=" + matricule + ", nom=" + nom + ", classe=" + classe + ", dob=" + dob + "]";
+    }
+
 }
