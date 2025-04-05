@@ -53,10 +53,17 @@ public class StudentController {
         return service.findStudents(name);
     }
 
+    @GetMapping("searchStudents/{name}")
+    public List<Student> searchStudentbyName(@PathVariable String name) {
+        return service.searchStudentByName(name);
+    }
+
     @GetMapping("/student_with_age/{matricule}")
     public StudentDto getStudentDto(@PathVariable int matricule) {
         return service.getStudentDto(matricule);
     }
+
+    
     
     // @PostMapping("/addStudent")
     // public Student addStudent(@RequestBody Student student) {

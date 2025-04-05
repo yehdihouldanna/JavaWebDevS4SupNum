@@ -97,8 +97,7 @@ public class StudentService {
         return null;
     }
 
-
-
-
-
+    public List<Student> searchStudentByName(String name) {
+        return repository.searchByName(name);
+    }
 }
