@@ -29,3 +29,49 @@ Pour le context de ce cours nous allons travailler les outils suivantes :
 
 * Executer votre projet en clicant sur le bouton run (parmi les section dans la bare de navigation à gauche)
 
+### Comment re-utiliser le module d'authentification jwtModule dans votre projet :
+* copier les dependences nécessaires pour le fonctionnement de ce module  dans votre `pom.xml`
+  ```xml
+    <!-- #Region : Spring Security-->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-security</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>org.projectlombok</groupId>
+			<artifactId>lombok</artifactId>
+			<scope>provided</scope>
+		</dependency>
+
+		<!-- ? to use instead of the deprecated jjwt, now we use three dependcies instead of the one
+		bundled one-->
+		<!-- JWT API -->
+		<dependency>
+			<groupId>io.jsonwebtoken</groupId>
+			<artifactId>jjwt-api</artifactId>
+			<version>0.12.6</version>
+		</dependency>
+
+		<!-- JWT implementation -->
+		<dependency>
+			<groupId>io.jsonwebtoken</groupId>
+			<artifactId>jjwt-impl</artifactId>
+			<version>0.12.6</version>
+			<scope>runtime</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>io.jsonwebtoken</groupId>
+			<artifactId>jjwt-jackson</artifactId>
+			<version>0.12.6</version>
+		</dependency>
+		
+		<!-- #endregion Spring security-->
+  ```
+
+  * Sauvegarder votre `pom.xml` après l'ajout des dependences (ceci devrait telecharger les dependences)
+  * Copier le dossier du module `jwtModule` dans le dossier de votre projet (le dossier contenant le fichier main)
+  * Assurer que tout fonctionne bien que les librairies dans le copie etaient les bonnes.
+  * Si tout est ok vous pouvez l'utiliser maintenant et le customiser à votre besoin.
+  
